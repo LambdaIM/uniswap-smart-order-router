@@ -41,7 +41,16 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.BNB]: [],
   [ChainId.AVALANCHE]: [],
   [ChainId.BASE_GOERLI]: [],
-  [ChainId.BASE]: []
+  [ChainId.BASE]: [],
+  [ChainId.LAMBDA]: [],
+  [ChainId.LAMBDA_HOLESKY]: [],
+  // Fake network for matching sdks
+  [ChainId.OPTIMISM_SEPOLIA]: [],
+  [ChainId.ARBITRUM_SEPOLIA]: [],
+  [ChainId.ROOTSTOCK]: [],
+  [ChainId.BLAST]: [],
+  [ChainId.ZORA]: [],
+  [ChainId.ZORA_SEPOLIA]: []
 };
 
 /**

@@ -20,6 +20,8 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].v3CoreFactoryAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].v3CoreFactoryAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
+  [ChainId.LAMBDA]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA].v3CoreFactoryAddress,
+  [ChainId.LAMBDA_HOLESKY]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA_HOLESKY].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -34,12 +36,14 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].quoterAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].quoterAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].quoterAddress,
+  [ChainId.LAMBDA]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA].quoterAddress,
+  [ChainId.LAMBDA_HOLESKY]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA_HOLESKY].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
 export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
-  [ChainId.MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v1MixedRouteQuoterAddress,
-  [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress,
+  [ChainId.MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].mixedRouteQuoterV1Address,
+  [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].mixedRouteQuoterV1Address,
 };
 
 export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
@@ -53,6 +57,8 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].multicallAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].multicallAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].multicallAddress,
+  [ChainId.LAMBDA]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA].multicallAddress,
+  [ChainId.LAMBDA_HOLESKY]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA_HOLESKY].multicallAddress
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -98,6 +104,12 @@ export const WETH9: {
     | ChainId.MOONBEAM
     | ChainId.BNB
     | ChainId.AVALANCHE
+    | ChainId.OPTIMISM_SEPOLIA
+    | ChainId.ARBITRUM_SEPOLIA
+    | ChainId.ZORA
+    | ChainId.ZORA_SEPOLIA
+    | ChainId.ROOTSTOCK
+    | ChainId.BLAST
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(
@@ -158,6 +170,20 @@ export const WETH9: {
   ),
   [ChainId.BASE]: new Token(
     ChainId.BASE,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.LAMBDA]: new Token(
+    ChainId.LAMBDA,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.LAMBDA_HOLESKY]: new Token(
+    ChainId.LAMBDA_HOLESKY,
     '0x4200000000000000000000000000000000000006',
     18,
     'WETH',

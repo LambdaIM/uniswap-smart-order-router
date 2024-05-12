@@ -31,6 +31,7 @@ import {
   USDC_BASE,
   USDC_BNB,
   USDC_ETHEREUM_GNOSIS,
+  USDC_LAMBDA,
   USDC_MAINNET,
   USDC_MOONBEAM,
   USDC_OPTIMISM,
@@ -48,7 +49,7 @@ import {
   WBTC_OPTIMISM,
   WBTC_OPTIMISM_GOERLI,
   WMATIC_POLYGON,
-  WMATIC_POLYGON_MUMBAI,
+  WMATIC_POLYGON_MUMBAI
 } from './token-provider';
 
 // These tokens will added to the Token cache on initialization.
@@ -143,6 +144,13 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.BASE]: {
     USDC: USDC_BASE,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.BASE],
+  },
+  [ChainId.LAMBDA]: {
+    USDC: USDC_LAMBDA,
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.LAMBDA],
+  },
+  [ChainId.LAMBDA_HOLESKY]: {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.LAMBDA_HOLESKY],
   }
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

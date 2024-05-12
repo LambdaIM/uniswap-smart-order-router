@@ -3,7 +3,12 @@ import { ChainId, Token, TradeType } from '@uniswap/sdk-core';
 import { FeeAmount } from '@uniswap/v3-sdk';
 import _ from 'lodash';
 
-import { ITokenListProvider, IV2SubgraphProvider, V2SubgraphPool, } from '../../../providers';
+import {
+  ITokenListProvider,
+  IV2SubgraphProvider,
+  USDC_LAMBDA,
+  V2SubgraphPool
+} from '../../../providers';
 import {
   CELO,
   CELO_ALFAJORES,
@@ -172,6 +177,9 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BASE]: [
     USDC_BASE,
   ],
+  [ChainId.LAMBDA]: [
+    USDC_LAMBDA,
+  ]
 };
 
 class SubcategorySelectionPools<SubgraphPool> {

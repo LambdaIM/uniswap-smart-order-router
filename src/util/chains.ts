@@ -16,6 +16,8 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BNB,
   ChainId.AVALANCHE,
   ChainId.BASE,
+  ChainId.LAMBDA,
+  ChainId.LAMBDA_HOLESKY,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -32,6 +34,8 @@ export const HAS_L1_FEE = [
   ChainId.ARBITRUM_GOERLI,
   ChainId.BASE,
   ChainId.BASE_GOERLI,
+  ChainId.LAMBDA,
+  ChainId.LAMBDA_HOLESKY,
 ];
 
 export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
@@ -79,6 +83,10 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.BASE;
     case 84531:
       return ChainId.BASE_GOERLI;
+    case 56026:
+      return ChainId.LAMBDA;
+    case 17000920:
+      return ChainId.LAMBDA_HOLESKY;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -102,6 +110,8 @@ export enum ChainName {
   AVALANCHE = 'avalanche-mainnet',
   BASE = 'base-mainnet',
   BASE_GOERLI = 'base-goerli',
+  LAMBDA = 'lambda-mainnet',
+  LAMBDA_HOLESKY = 'lambda-holesky',
 }
 
 
@@ -177,6 +187,16 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETH',
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.LAMBDA]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.LAMBDA_HOLESKY]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ]
 };
 
@@ -197,6 +217,8 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BNB]: NativeCurrencyName.BNB,
   [ChainId.AVALANCHE]: NativeCurrencyName.AVALANCHE,
   [ChainId.BASE]: NativeCurrencyName.ETHER,
+  [ChainId.LAMBDA]: NativeCurrencyName.ETHER,
+  [ChainId.LAMBDA_HOLESKY]: NativeCurrencyName.ETHER
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -235,6 +257,10 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.BASE;
     case 84531:
       return ChainName.BASE_GOERLI;
+    case 56026:
+      return ChainName.LAMBDA;
+    case 17000920:
+      return ChainName.LAMBDA_HOLESKY;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -274,6 +300,10 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_AVALANCHE!;
     case ChainId.BASE:
       return process.env.JSON_RPC_PROVIDER_BASE!;
+    case ChainId.LAMBDA:
+      return process.env.JSON_RPC_PROVIDER_LAMBDA!;
+    case ChainId.LAMBDA_HOLESKY:
+      return process.env.JSON_RPC_PROVIDER_LAMBDA_HOLESKY!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -397,6 +427,63 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
   [ChainId.BASE_GOERLI]: new Token(
     ChainId.BASE_GOERLI,
     '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.LAMBDA]: new Token(
+    ChainId.LAMBDA,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.LAMBDA_HOLESKY]: new Token(
+    ChainId.LAMBDA_HOLESKY,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  // Fake network for matching sdks
+  [ChainId.OPTIMISM_SEPOLIA]: new Token(
+    ChainId.OPTIMISM_SEPOLIA,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.ARBITRUM_SEPOLIA]: new Token(
+    ChainId.ARBITRUM_SEPOLIA,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.ZORA]: new Token(
+    ChainId.ZORA,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.ZORA_SEPOLIA]: new Token(
+    ChainId.ZORA_SEPOLIA,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.ROOTSTOCK]: new Token(
+    ChainId.ROOTSTOCK,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+  [ChainId.BLAST]: new Token(
+    ChainId.BLAST,
+    '0x0000000000000000000000000000000000000000',
     18,
     'WETH',
     'Wrapped Ether'

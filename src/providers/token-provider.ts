@@ -471,7 +471,7 @@ export const USDC_BASE = new Token(
   'USD Base Coin'
 )
 
-// Base Goerli Tokens 
+// Base Goerli Tokens
 export const USDC_BASE_GOERLI = new Token(
   ChainId.BASE_GOERLI,
   '0x853154e2A5604E5C74a2546E2871Ad44932eB92C',
@@ -536,6 +536,14 @@ export const WBTC_MOONBEAM = new Token(
   8,
   'WBTC',
   'Wrapped BTC bridged using Multichain'
+);
+
+export const USDC_LAMBDA = new Token(
+  ChainId.LAMBDA,
+  '0x026C48C2976EF967ad92439C20389fFE5110A043',
+  6,
+  'USDC',
+  'USDC Bridged'
 );
 
 export class TokenProvider implements ITokenProvider {
@@ -795,6 +803,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BASE;
     case ChainId.BASE_GOERLI:
       return USDC_BASE_GOERLI;
+    case ChainId.LAMBDA:
+      return USDC_LAMBDA;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
