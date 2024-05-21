@@ -21,7 +21,6 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].v3CoreFactoryAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
   [ChainId.LAMBDA]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA].v3CoreFactoryAddress,
-  [ChainId.LAMBDA_HOLESKY]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA_HOLESKY].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -37,7 +36,6 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].quoterAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].quoterAddress,
   [ChainId.LAMBDA]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA].quoterAddress,
-  [ChainId.LAMBDA_HOLESKY]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA_HOLESKY].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -58,7 +56,6 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].multicallAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].multicallAddress,
   [ChainId.LAMBDA]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA].multicallAddress,
-  [ChainId.LAMBDA_HOLESKY]: CHAIN_TO_ADDRESSES_MAP[ChainId.LAMBDA_HOLESKY].multicallAddress
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -66,7 +63,7 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) : string => {
   if (chainId == ChainId.BNB) {
     return BNB_SWAP_ROUTER_02_ADDRESS;
   }
-  return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45';
+  return '0x995427f86E5DA37176495329EDb00d3a274Bec62';
 };
 
 export const OVM_GASPRICE_ADDRESS =
@@ -75,7 +72,7 @@ export const ARB_GASINFO_ADDRESS = '0x000000000000000000000000000000000000006C';
 export const TICK_LENS_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.ARBITRUM_ONE].tickLensAddress;
 export const NONFUNGIBLE_POSITION_MANAGER_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].nonfungiblePositionManagerAddress;
 export const V3_MIGRATOR_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v3MigratorAddress;
-export const MULTICALL2_ADDRESS = '0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696';
+export const MULTICALL2_ADDRESS = '0xd8a68d2e6880dc062bE44510EF5f28717ea3363a';
 
 export type AddressMap = { [chainId: number]: string | undefined };
 
@@ -182,11 +179,4 @@ export const WETH9: {
     'WETH',
     'Wrapped Ether'
   ),
-  [ChainId.LAMBDA_HOLESKY]: new Token(
-    ChainId.LAMBDA_HOLESKY,
-    '0x4200000000000000000000000000000000000006',
-    18,
-    'WETH',
-    'Wrapped Ether'
-  )
 };

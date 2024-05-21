@@ -287,7 +287,6 @@ export async function calculateGasUsed(
       ChainId.BASE,
       ChainId.BASE_GOERLI,
       ChainId.LAMBDA,
-      ChainId.LAMBDA_HOLESKY
     ].includes(chainId)
   ) {
     l2toL1FeeInWei = calculateOptimismToL1FeeFromCalldata(

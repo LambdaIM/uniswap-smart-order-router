@@ -624,7 +624,6 @@ export class AlphaRouter
           );
           break;
         case ChainId.LAMBDA:
-        case ChainId.LAMBDA_HOLESKY:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
             provider,

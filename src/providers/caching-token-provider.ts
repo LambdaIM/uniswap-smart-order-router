@@ -149,9 +149,6 @@ export const CACHE_SEED_TOKENS: {
     USDC: USDC_LAMBDA,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.LAMBDA],
   },
-  [ChainId.LAMBDA_HOLESKY]: {
-    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.LAMBDA_HOLESKY],
-  }
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };
 
