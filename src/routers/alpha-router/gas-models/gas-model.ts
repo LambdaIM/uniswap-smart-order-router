@@ -19,6 +19,7 @@ import {
   USDC_ETHEREUM_GNOSIS,
   USDC_GÖRLI,
   USDC_KOVAN,
+  USDC_LAMBDA,
   USDC_MAINNET,
   USDC_MOONBEAM,
   USDC_OPTIMISM,
@@ -33,7 +34,7 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISTIC_KOVAN,
   USDT_ROPSTEN,
-  WBTC_GÖRLI,
+  WBTC_GÖRLI
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -71,6 +72,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.CELO_ALFAJORES]: [CUSD_CELO_ALFAJORES],
   [ChainId.GNOSIS]: [USDC_ETHEREUM_GNOSIS],
   [ChainId.MOONBEAM]: [USDC_MOONBEAM],
+  [ChainId.LAMBDA]: [USDC_LAMBDA],
 };
 
 export type L1ToL2GasCosts = {

@@ -22,11 +22,13 @@ import {
   DAI_RINKEBY_1,
   DAI_RINKEBY_2,
   ITokenProvider,
+  LAMBDA,
   TokenAccessor,
   UNI_ARBITRUM_RINKEBY,
   USDC_ARBITRUM,
   USDC_ARBITRUM_RINKEBY,
   USDC_ETHEREUM_GNOSIS,
+  USDC_LAMBDA,
   USDC_MAINNET,
   USDC_MOONBEAM,
   USDC_OPTIMISM,
@@ -43,7 +45,7 @@ import {
   WBTC_OPTIMISM,
   WBTC_OPTIMISTIC_KOVAN,
   WMATIC_POLYGON,
-  WMATIC_POLYGON_MUMBAI,
+  WMATIC_POLYGON_MUMBAI
 } from './token-provider';
 
 // These tokens will added to the Token cache on initialization.
@@ -126,7 +128,11 @@ export const CACHE_SEED_TOKENS: {
     WBTC: WBTC_MOONBEAM,
     WGLMR: WRAPPED_NATIVE_CURRENCY[ChainId.MOONBEAM],
   },
-
+  [ChainId.LAMBDA]: {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.LAMBDA],
+    USDC: USDC_LAMBDA,
+    LAMBDA: LAMBDA,
+  },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };
 

@@ -26,8 +26,10 @@ import {
   DAI_RINKEBY_2,
   FEI_MAINNET,
   ITokenProvider,
+  LAMBDA,
   USDC_ARBITRUM,
   USDC_ETHEREUM_GNOSIS,
+  USDC_LAMBDA,
   USDC_MAINNET,
   USDC_MOONBEAM,
   USDC_OPTIMISM,
@@ -168,6 +170,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
     WBTC_MOONBEAM,
     WGLMR_MOONBEAM,
   ],
+  [ChainId.LAMBDA]: [WRAPPED_NATIVE_CURRENCY[ChainId.LAMBDA], USDC_LAMBDA, LAMBDA]
 };
 
 export async function getV3CandidatePools({

@@ -510,6 +510,23 @@ export const WBTC_MOONBEAM = new Token(
   'Wrapped BTC bridged using Multichain'
 );
 
+
+export const USDC_LAMBDA = new Token(
+  ChainId.LAMBDA,
+  '0x026C48C2976EF967ad92439C20389fFE5110A043',
+  6,
+  'USDC',
+  'USDC Bridged'
+);
+
+export const LAMBDA = new Token(
+  ChainId.LAMBDA,
+  '0x99344442308EDb5Ee0b6cca5e54D1355679357Fa',
+  18,
+  'LAMBDA',
+  'Lambda'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
